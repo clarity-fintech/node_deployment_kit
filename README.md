@@ -4,6 +4,15 @@
 
 The CLRTY-1 Node Kit gives builders and operators control over infrastructure on the network: execution environments, capital routing logic, private/public node operation, and DePIN participation.
 
+## Downloads
+
+Start here:
+
+- **Full Node Deployment Kit ZIP:** [`dist/node-deployment-kit-full.zip`](dist/node-deployment-kit-full.zip)
+- **Checksums:** [`dist/SHA256SUMS.txt`](dist/SHA256SUMS.txt)
+- **Download index:** [`DOWNLOADS.md`](DOWNLOADS.md)
+- **Git clone:** `git clone https://github.com/clarity-fintech/node_deployment_kit.git`
+
 ## What Is a CLRTY-1 Node?
 
 A CLRTY-1 node is a programmable execution unit capable of processing transactions, running custom logic, interfacing with HELIX execution, coordinating capital flows, and enforcing compliance rules.
