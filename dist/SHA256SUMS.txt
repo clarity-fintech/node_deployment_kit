@@ -1,1 +1,4 @@
-feeb6f72311192dcfe8e1a1e9de7ff06038b7c9827b0d8f4e755d8dba330e6bf  node-deployment-kit-full.zip
+e3a86d56cdb5a691bcea9708f4dc81aef64eefe4dcc878ae136cafe4556fd825  mastermind-first-access-pack.zip
+424c774896c45fcf37bd26faa9586696635dc29dbdbd6d03c2cc089533428e01  node-api-sdk-downloads.zip
+c7c9a28e6f945ebe871f0e1063d0857a6545bc96de9395d78ddfcad65104cf7e  node-deployment-kit-full.zip
+dccec69954f9624c5ce776291761863313f789ccf335d052ad65ee98a87b238a  operator-sdk-downloads.zip

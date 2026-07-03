@@ -9,6 +9,9 @@ The CLRTY-1 Node Kit gives builders and operators control over infrastructure on
 Start here:
 
 - **Full Node Deployment Kit ZIP:** [`dist/node-deployment-kit-full.zip`](dist/node-deployment-kit-full.zip)
+- **Node API + SDK Downloads:** [`dist/node-api-sdk-downloads.zip`](dist/node-api-sdk-downloads.zip)
+- **Operator SDK Downloads:** [`dist/operator-sdk-downloads.zip`](dist/operator-sdk-downloads.zip)
+- **Mastermind First Access Pack:** [`dist/mastermind-first-access-pack.zip`](dist/mastermind-first-access-pack.zip)
 - **Checksums:** [`dist/SHA256SUMS.txt`](dist/SHA256SUMS.txt)
 - **Download index:** [`DOWNLOADS.md`](DOWNLOADS.md)
 - **Git clone:** `git clone https://github.com/clarity-fintech/node_deployment_kit.git`
