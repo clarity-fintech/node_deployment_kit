@@ -51,7 +51,7 @@ fast_forward_clone() {
 # 1. Main monorepo (theangelofwill/-CLRTY)
 commit_repo "$ROOT" "$MSG"
 
-# 2. PRISM CLI (williamsnameiswill/clarity-prism-cli)
+# 2. PRISM CLI (clarity-fintech/clarity_prism_cli)
 commit_repo "$ROOT/clarity-prism-cli" "labs: clarity-fintech.com API/RPC + clrt labs commands"
 
 # 3. Wallet integration — push once from embedded clone; home clone shares the same remote
@@ -74,5 +74,5 @@ fi
 
 log "=== ALL REPOS SYNCED ==="
 log "Main:     https://github.com/theangelofwill/-CLRTY"
-log "Wallet:   https://github.com/theangelofwill/CLRTY-WALLET-INTEGRATION"
-log "PRISM:    https://github.com/williamsnameiswill/clarity-prism-cli"
+log "Wallet:   https://github.com/clarity-fintech/wallet_integration"
+log "PRISM:    https://github.com/clarity-fintech/clarity_prism_cli"
