@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "chain_id": "clrty-1",
+  "node_types": [
+    { "id": "validator", "role": "consensus", "binary": "clarityd", "min_stake_uclrty": "1000000000000" },
+    { "id": "sentry", "role": "perimeter", "binary": "clarityd", "exposes_rpc": false },
+    { "id": "rpc-gateway", "role": "edge", "binary": "cloudflare-worker", "public": true },
+    { "id": "indexer", "role": "read", "binary": "clrty-1/indexer/worker.ts" }
+  ],
+  "clarityd_roles": ["validator", "sentry", "full-node"],
+  "trust_scoring": {
+    "module": "CLRTY_SUBSTRATE/validator_manifold",
+    "dimensions": ["uptime", "fma_root", "attestation_lag"]
+  }
+}

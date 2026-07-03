@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "task": "l1_network",
+  "chain_id": 1202,
+  "chain_slug": "clrty-1",
+  "decimals": 9,
+  "symbol": "uclrty",
+  "name": "CLRTY-1",
+  "consensus": "poc_l1",
+  "rpc": {
+    "primary": "https://rpc.clarity-fintech.com",
+    "local": "http://127.0.0.1:8545/rpc",
+    "methods_manifest": "CLRTY_SUBSTRATE/boot/clrty_rpc_methods_manifest.json"
+  },
+  "rest": {
+    "primary": "https://api.clrty.dev",
+    "local": "http://127.0.0.1:8545"
+  },
+  "block_time_target_ms": 400,
+  "slot_rpc": "getSlot",
+  "genesis": "CLRTY_SUBSTRATE/boot/genesis_entropy.json",
+  "security": {
+    "mda": "CLRTY_SUBSTRATE/security/mda/",
+    "fma": "CLRTY_SUBSTRATE/security/fma/",
+    "msd": "CLRTY_SUBSTRATE/security/msd/"
+  },
+  "topology": {
+    "validators": { "role": "consensus", "expose_rpc": false },
+    "sentries": { "role": "perimeter", "expose_rpc": false, "count_planned": 3 },
+    "rpc_gateway": { "role": "edge", "host": "rpc.clarity-fintech.com", "worker": "rpc-gateway" },
+    "cex_ingress": { "role": "archival", "host": "cex-ingress.clarity-fintech.com" }
+  },
+  "status": "mainnet_candidate"
+}

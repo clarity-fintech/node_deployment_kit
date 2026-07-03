@@ -1,0 +1,34 @@
+{
+  "treasury_name": "Volkov Intelligence Systems (VIS) Gnosis Safe",
+  "portal_url": "https://invest.clrty.network",
+  "safe_address": "0x0000000000000000000000000000000000000000",
+  "chain_id": 1,
+  "network_name": "Ethereum Mainnet",
+  "usd_cents_per_clrty": 100,
+  "private_seed_cap_tokens": 2000000,
+  "total_genesis_supply_tokens": 16000000,
+  "decimals": 9,
+  "seed_genesis_min_usd_cents": 10000000,
+  "strategic_min_usd_cents": 50000000,
+  "eth_usd_cents": 300000,
+  "accepted_assets": [
+    {
+      "symbol": "USDC",
+      "asset_type": "erc20",
+      "decimals": 6,
+      "contract": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    },
+    {
+      "symbol": "USDT",
+      "asset_type": "erc20",
+      "decimals": 6,
+      "contract": "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    },
+    {
+      "symbol": "ETH",
+      "asset_type": "native",
+      "decimals": 18,
+      "contract": null
+    }
+  ]
+}

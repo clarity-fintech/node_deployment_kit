@@ -1,0 +1,153 @@
+{
+  "generated_at": "2026-07-03T19:00:41.105412+00:00",
+  "sources": [
+    {
+      "source": "docs/dev-portal/CUSTOM_NODE_ONBOARDING.md",
+      "destination": "docs/onboarding/CUSTOM_NODE_ONBOARDING.md"
+    },
+    {
+      "source": "docs/monetization/MONETIZATION_LAYERS.md",
+      "destination": "docs/onboarding/MONETIZATION_LAYERS.md"
+    },
+    {
+      "source": "docs/monetization/API_FIRST_B2B_INFRASTRUCTURE.md",
+      "destination": "docs/onboarding/API_FIRST_B2B_INFRASTRUCTURE.md"
+    },
+    {
+      "source": "docs/integration/third_party_onboarding.md",
+      "destination": "docs/onboarding/third_party_onboarding.md"
+    },
+    {
+      "source": "docs/chain/validators-sentry.md",
+      "destination": "docs/chain-ops/validators-sentry.md"
+    },
+    {
+      "source": "docs/l1_launch/checklist.md",
+      "destination": "docs/chain-ops/l1_checklist.md"
+    },
+    {
+      "source": "docs/launch/LAUNCH_STAGES.md",
+      "destination": "docs/chain-ops/LAUNCH_STAGES.md"
+    },
+    {
+      "source": "docs/launch/NANO_ORGANIZATION_100.md",
+      "destination": "docs/chain-ops/NANO_ORGANIZATION_100.md"
+    },
+    {
+      "source": "docs/launch/SIMULATION_TO_TESTNET_TRACEABILITY.md",
+      "destination": "docs/chain-ops/SIMULATION_TO_TESTNET_TRACEABILITY.md"
+    },
+    {
+      "source": "docs/infrastructure/nodes_21_25.md",
+      "destination": "docs/chain-ops/nodes_21_25.md"
+    },
+    {
+      "source": "docs/infrastructure/token_deployment_runbook.md",
+      "destination": "docs/chain-ops/token_deployment_runbook.md"
+    },
+    {
+      "source": "docs/omnichain/l1_rpc_provision.md",
+      "destination": "docs/chain-ops/l1_rpc_provision.md"
+    },
+    {
+      "source": "docs/omnichain/l1_production_operations.md",
+      "destination": "docs/chain-ops/l1_production_operations.md"
+    },
+    {
+      "source": "clrty-api/src/node_registry.rs",
+      "destination": "api-node-registry/node_registry.rs"
+    },
+    {
+      "source": "clrty-api/src/monetization.rs",
+      "destination": "api-node-registry/monetization.rs"
+    },
+    {
+      "source": "clrty-api/src/income_ledger.rs",
+      "destination": "api-node-registry/income_ledger.rs"
+    },
+    {
+      "source": "clrty-cli-core/src/node_register.rs",
+      "destination": "api-node-registry/node_register.rs"
+    },
+    {
+      "source": "clrty-cli-core/src/handlers/node.rs",
+      "destination": "api-node-registry/cli_node_handler.rs"
+    },
+    {
+      "source": "CLRTY_SUBSTRATE/launch_deployment",
+      "destination": "substrate-node/launch_deployment"
+    },
+    {
+      "source": "CLRTY_SUBSTRATE/validator_network",
+      "destination": "substrate-node/validator_network"
+    },
+    {
+      "source": "CLRTY_SUBSTRATE/developer_suite/substrate_rpc_api",
+      "destination": "substrate-node/substrate_rpc_api"
+    },
+    {
+      "source": "CLRTY_SUBSTRATE/settlement/config.rs",
+      "destination": "substrate-node/settlement/config.rs"
+    },
+    {
+      "source": "CLRTY_SUBSTRATE/settlement/instructions.rs",
+      "destination": "substrate-node/settlement/instructions.rs"
+    },
+    {
+      "source": "CLRTY_SUBSTRATE/settlement/wallet_registry.rs",
+      "destination": "substrate-node/settlement/wallet_registry.rs"
+    },
+    {
+      "source": "scripts/labs/verify_node_onboarding.sh",
+      "destination": "scripts/labs/verify_node_onboarding.sh"
+    },
+    {
+      "source": "scripts/labs/verify_labs_smoke.sh",
+      "destination": "scripts/labs/verify_labs_smoke.sh"
+    },
+    {
+      "source": "scripts/deploy",
+      "destination": "scripts/deploy"
+    },
+    {
+      "source": "scripts/predeploy",
+      "destination": "scripts/predeploy"
+    },
+    {
+      "source": "scripts/launch",
+      "destination": "scripts/launch"
+    },
+    {
+      "source": "scripts/metrics/verify_data_center.sh",
+      "destination": "scripts/metrics/verify_data_center.sh"
+    },
+    {
+      "source": "CLRTY_SUBSTRATE/boot/launch_tasks_manifest.json",
+      "destination": "manifests/launch_tasks_manifest.json"
+    },
+    {
+      "source": "CLRTY_SUBSTRATE/boot/monetization_layers_manifest.json",
+      "destination": "manifests/monetization_layers_manifest.json"
+    },
+    {
+      "source": "CLRTY_SUBSTRATE/boot/l1_network_manifest.json",
+      "destination": "manifests/l1_network_manifest.json"
+    },
+    {
+      "source": "CLRTY_SUBSTRATE/boot/validator_node_types_manifest.json",
+      "destination": "manifests/validator_node_types_manifest.json"
+    },
+    {
+      "source": "CLRTY_SUBSTRATE/boot/settlement_config.json",
+      "destination": "manifests/settlement_config.json"
+    },
+    {
+      "source": "var/launch/readiness.json",
+      "destination": "manifests/readiness.json"
+    },
+    {
+      "source": "var/launch/mainnet_contract_gates.json",
+      "destination": "manifests/mainnet_contract_gates.json"
+    }
+  ]
+}

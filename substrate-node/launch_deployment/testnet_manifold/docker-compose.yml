@@ -1,0 +1,51 @@
+services:
+  clrty-validator-0:
+    image: rust:1.83-bookworm
+    working_dir: /app
+    volumes:
+      - ..:/app
+    command: cargo run -p clrty-substrate --bin clarityd -- status
+    networks:
+      - clrty-net
+
+  clrty-validator-1:
+    image: rust:1.83-bookworm
+    working_dir: /app
+    volumes:
+      - ..:/app
+    command: cargo run -p clrty-substrate --bin clarityd -- sim-block
+    networks:
+      - clrty-net
+
+  clrty-validator-2:
+    image: rust:1.83-bookworm
+    working_dir: /app
+    volumes:
+      - ..:/app
+    command: cargo run -p clarity-cli -- chain status
+    networks:
+      - clrty-net
+
+  clrty-validator-3:
+    image: rust:1.83-bookworm
+    working_dir: /app
+    volumes:
+      - ..:/app
+    command: cargo run -p clarity-cli -- chain testnet-bootstrap
+    networks:
+      - clrty-net
+
+  clrty-api:
+    image: rust:1.83-bookworm
+    working_dir: /app
+    volumes:
+      - ..:/app
+    ports:
+      - "8545:8545"
+    command: cargo run -p clrty-api
+    networks:
+      - clrty-net
+
+networks:
+  clrty-net:
+    driver: bridge

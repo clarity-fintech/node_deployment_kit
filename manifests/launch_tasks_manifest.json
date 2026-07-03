@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "updated": "2026-07-02",
+  "calendly": {
+    "embed_url_env": "CALENDLY_EMBED_URL",
+    "api_token_env": "CALENDLY_API_TOKEN",
+    "event_type_uri_env": "CALENDLY_EVENT_TYPE_URI"
+  },
+  "notion": {
+    "launch_tasks_database_env": "NOTION_LAUNCH_TASKS_DATABASE_ID",
+    "completed_work_database_env": "NOTION_COMPLETED_WORK_DATABASE_ID",
+    "page_env": "NOTION_DATA_CENTER_PAGE_ID",
+    "callout_block_env": "NOTION_LAUNCH_CALLOUT_BLOCK_ID"
+  },
+  "requires_meeting_ids": [
+    "E-21", "E-22", "E-23", "E-24", "E-25", "E-26", "E-27", "E-28",
+    "N-10", "N-78", "N-81", "N-82", "N-89", "N-94", "N-100",
+    "E-61", "E-62", "E-71", "E-72", "E-74"
+  ],
+  "platform_completed": [
+    {
+      "id": "PLATFORM-001",
+      "track": "platform",
+      "phase": "Monetization",
+      "title": "Private monetization streams live (execution fees + royalties)",
+      "status": "done",
+      "evidence": "clrty-api/src/income_ledger.rs, monetization-layers/products/private_streams.json",
+      "actions_taken": "Default-on fee logging on sniper/helix/inference routes; GET /v1/monetization/income; settlement mirror to var/settlement/execution_fee_mirror.jsonl",
+      "verify_command": "curl -s http://127.0.0.1:8545/v1/monetization/income"
+    },
+    {
+      "id": "PLATFORM-002",
+      "track": "platform",
+      "phase": "Monetization",
+      "title": "Stripe catalog repriced (−80%) and Payment Links live",
+      "status": "done",
+      "evidence": "monetization-layers/products/catalog.json, monetization-layers/products/stripe_portal.json",
+      "actions_taken": "8 paid Stripe products at 20% list price; model_royalty removed from Stripe (private stream only)",
+      "verify_command": "curl -s http://127.0.0.1:8545/v1/monetization/portal"
+    },
+    {
+      "id": "PLATFORM-003",
+      "track": "platform",
+      "phase": "Data Center",
+      "title": "Notion Data Center sync — 26 metrics (ROI I–IV + private V)",
+      "status": "done",
+      "evidence": "scripts/metrics/sync_notion_data_center.py, CLRTY_SUBSTRATE/boot/data_center_manifest.json",
+      "actions_taken": "make data-center-sync pipeline; Section V private_monetization from income ledger",
+      "verify_command": "make data-center-sync && bash scripts/metrics/verify_data_center.sh"
+    },
+    {
+      "id": "PLATFORM-004",
+      "track": "mainnet_ops",
+      "phase": "Gates",
+      "title": "Mainnet contract gates 5/5 preflight pass",
+      "status": "done",
+      "evidence": "var/launch/mainnet_contract_gates.json",
+      "actions_taken": "verify_mainnet_contract_gates.sh — token, vesting/SAFT, multisig, distribution, on-chain layers",
+      "verify_command": "bash scripts/launch/verify_mainnet_contract_gates.sh"
+    },
+    {
+      "id": "PLATFORM-005",
+      "track": "mainnet_ops",
+      "phase": "Gates",
+      "title": "Launch readiness report — launch_ready true",
+      "status": "done",
+      "evidence": "var/launch/launch_readiness_report.json",
+      "actions_taken": "16/16 phases pass (1 skip); pretest, L1 audit, compliance, stress",
+      "verify_command": "bash scripts/launch/launch_readiness.sh --continue --skip-foundry"
+    }
+  ],
+  "sources": [
+    "docs/launch/NANO_ORGANIZATION_100.md",
+    "docs/100_task_ledger.md",
+    "docs/l1_launch/checklist.md",
+    "docs/compliance/phase2_tasks_21_40.md",
+    "var/pretest/full_pretest_report.json",
+    "var/launch/launch_readiness_report.json",
+    "var/launch/mainnet_contract_gates.json"
+  ]
+}

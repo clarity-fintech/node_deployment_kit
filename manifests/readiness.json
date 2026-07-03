@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "nexus": "clrty-core-nexus",
+  "updated_at": "2026-07-02T00:00:00Z",
+  "source": "docs/launch/NANO_ORGANIZATION_100.md",
+  "nano_progress": {
+    "total": 100,
+    "implemented": 27,
+    "partial": 53,
+    "planned": 11,
+    "blocked": 7,
+    "deferred": 2
+  },
+  "institutional_phases": [
+    {
+      "id": 1,
+      "name": "Integrity Core",
+      "nano_steps": "1-20",
+      "objective": "Immutable root-of-trust and secure development environment",
+      "ready": false,
+      "blockers": [
+        "Step 2: .gitmodules federation scaffold only (.gitmodules.example)",
+        "Step 9: DVC remote not configured — .gitattributes LFS patterns only",
+        "Step 10: GPG/HSM commit signing — institutional ops external",
+        "Step 14: test-validator cluster partial",
+        "Step 17: use var/launch/readiness.json + launch_readiness_report.json",
+        "fork_swap_stress gate open in launch_readiness_report"
+      ],
+      "verify": "make verify-stage-1"
+    },
+    {
+      "id": 2,
+      "name": "Intelligence Injection",
+      "nano_steps": "21-40",
+      "objective": "AI models and Quantum Skills define competitive execution edge",
+      "ready": false,
+      "blockers": [
+        "Step 21-26: vis-intelligence monolithic path — DVC + trained weights planned",
+        "Step 40: model-hash CI scaffold — make model-hash-verify informational until weights declared"
+      ],
+      "verify": "make verify-stage-2"
+    },
+    {
+      "id": 3,
+      "name": "Execution & Routing",
+      "nano_steps": "41-60",
+      "objective": "HELIX + MIRRA internalize liquidity and private execution",
+      "ready": true,
+      "blockers": [],
+      "verify": "make verify-stage-3"
+    },
+    {
+      "id": 4,
+      "name": "Operational Activation",
+      "nano_steps": "61-100",
+      "objective": "Genesis, Sentinel deployment, fee-flywheel, developer portals",
+      "ready": false,
+      "blockers": [
+        "Steps 81-82,89,94,100: genesis ceremony, HSM keys, TGE tag — external ops",
+        "Step 78: legal-audit sign-off external",
+        "Step 70: cross-chain shadow routing deferred",
+        "Public Products/Skills hub deferred (public_website_integration.json)"
+      ],
+      "verify": "make verify-stage-4 && make gate-check"
+    }
+  ],
+  "stages": [
+    {
+      "id": 0,
+      "name": "Nexus Init",
+      "nano_steps": "scaffold",
+      "ready": true,
+      "blockers": []
+    },
+    {
+      "id": 1,
+      "name": "Foundation",
+      "institutional_phase": 1,
+      "nano_steps": "1-20",
+      "ready": false,
+      "blockers": ["fork_swap_stress", "submodule federation not active"]
+    },
+    {
+      "id": 2,
+      "name": "Intelligence",
+      "institutional_phase": 2,
+      "nano_steps": "21-40",
+      "ready": false,
+      "blockers": ["DVC model artifacts", "model-hash gate scaffold"]
+    },
+    {
+      "id": 3,
+      "name": "HELIX",
+      "institutional_phase": 3,
+      "nano_steps": "41-60",
+      "ready": true,
+      "blockers": []
+    },
+    {
+      "id": 4,
+      "name": "Compliance",
+      "institutional_phase": 4,
+      "nano_steps": "61-80",
+      "ready": false,
+      "blockers": ["legal-audit sign-off external", "cross-chain shadow deferred"]
+    },
+    {
+      "id": 5,
+      "name": "Production Genesis",
+      "institutional_phase": 4,
+      "nano_steps": "81-100",
+      "ready": false,
+      "blockers": ["Genesis ceremony external", "TGE_PROD_DEPLOYED tag external", "public website gate closed"]
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "updated": "2026-07-02",
+  "chain_id": "clrty-1",
+  "tax_engine": {
+    "rate_bps": 400,
+    "split_bps": { "treasury": 160, "stakers": 120, "founder": 80, "liquidity": 40 },
+    "contract_slot": "ClrtFeeRouter",
+    "status": "live",
+    "billing": "on_chain"
+  },
+  "layers": [
+    {
+      "id": "L01",
+      "slug": "tax_engine",
+      "title": "Tax Engine",
+      "model": "4% on-chain split 40/30/20/10",
+      "stripe_slug": null,
+      "api_route": "internal://calculus/tax",
+      "tier": "protocol",
+      "price_usd_cents": null,
+      "billing": "on_chain",
+      "status": "live"
+    },
+    {
+      "id": "L02",
+      "slug": "burn_to_access",
+      "title": "Burn-to-Access",
+      "model": "CLRTY burn per access tier",
+      "stripe_slug": null,
+      "api_route": "POST /v1/monetization/burn-quote",
+      "tier": "utility",
+      "price_usd_cents": null,
+      "status": "live"
+    },
+    {
+      "id": "L03",
+      "slug": "daas_tier1",
+      "title": "DaaS-Core",
+      "model": "subscription + overage",
+      "stripe_slug": "daas_tier1",
+      "api_route": "GET /v1/monetization/daas/quote",
+      "tier": "institutional",
+      "price_usd_cents": 300000,
+      "status": "live"
+    },
+    {
+      "id": "L04",
+      "slug": "telemetry_edge",
+      "title": "Telemetry-X",
+      "model": "usage + value-based",
+      "stripe_slug": "telemetry_edge",
+      "api_route": "GET /v1/alpha/telemetry",
+      "tier": "edge",
+      "price_usd_cents": 500000,
+      "status": "live"
+    },
+    {
+      "id": "L05",
+      "slug": "exec_sniper",
+      "title": "Exec-Sniper API",
+      "model": "base + 0.1-0.5% volume",
+      "stripe_slug": "exec_sniper",
+      "api_route": "POST /v1/monetization/sniper/quote",
+      "api_routes_v1": [
+        "POST /v1/sniper/quote",
+        "POST /v1/sniper/execute",
+        "GET /v1/sniper/status/:trade_id"
+      ],
+      "contract_slot": "ClrtExecutionReserve",
+      "tier": "edge",
+      "price_usd_cents": 100000,
+      "performance_fee_bps_max": 50,
+      "billing": "hybrid",
+      "status": "live"
+    },
+    {
+      "id": "L06",
+      "slug": "node_governance",
+      "title": "Node Governance",
+      "model": "free dev + paid consortium",
+      "stripe_slug": "node_sovereign",
+      "api_route": "POST /v1/monetization/node/register",
+      "tier": "sovereign",
+      "price_usd_cents": 2000000,
+      "free_tier_slug": "node_free",
+      "status": "live"
+    },
+    {
+      "id": "L07",
+      "slug": "sdk_enterprise",
+      "title": "SDK/Tooling License",
+      "model": "enterprise license + maintenance",
+      "stripe_slug": "sdk_enterprise",
+      "api_route": "entitlement:sdk_enterprise",
+      "tier": "sovereign",
+      "price_usd_cents": 1000000,
+      "status": "live"
+    },
+    {
+      "id": "L08",
+      "slug": "marketplace_commission",
+      "title": "Marketplace Commission",
+      "model": "escrow micro-tx %",
+      "stripe_slug": null,
+      "api_route": "POST /v1/monetization/marketplace/settle",
+      "tier": "protocol",
+      "commission_bps": 25,
+      "contract_slot": "ClrtMarketplaceRouter",
+      "billing": "on_chain",
+      "status": "live"
+    },
+    {
+      "id": "L09",
+      "slug": "model_royalty",
+      "title": "Royalty-on-Model-Reuse",
+      "model": "per API call micro-royalty",
+      "stripe_slug": null,
+      "api_route": "POST /v1/monetization/royalty/quote",
+      "tier": "usage",
+      "royalty_bps": 10,
+      "contract_slot": "ClrtModelRegistry",
+      "price_usd_cents": null,
+      "billing": "on_chain",
+      "status": "live"
+    },
+    {
+      "id": "L10",
+      "slug": "x402_metered",
+      "title": "x402 API Monetization",
+      "model": "per-request micropay",
+      "stripe_slug": "x402_metered",
+      "api_route": "POST /v1/intelligence/x402/quote",
+      "tier": "metered",
+      "price_usd_cents": 1980,
+      "status": "live"
+    },
+    {
+      "id": "L11",
+      "slug": "predictive_intel",
+      "title": "Predictive Intelligence SaaS",
+      "model": "RAG/GenAI reports",
+      "stripe_slug": "predictive_intel",
+      "api_route": "GET /v1/alpha/telemetry",
+      "tier": "edge",
+      "price_usd_cents": 400000,
+      "status": "live"
+    },
+    {
+      "id": "L12",
+      "slug": "private_rpc",
+      "title": "Private RPC / MEV routing",
+      "model": "infra fee",
+      "stripe_slug": "private_rpc",
+      "api_route": "GET /v1/helix/status",
+      "tier": "edge",
+      "price_usd_cents": 200000,
+      "status": "modeled"
+    },
+    {
+      "id": "L13",
+      "slug": "governance_stake",
+      "title": "Governance Stake Fee",
+      "model": "stake barrier",
+      "stripe_slug": null,
+      "api_route": "POST /v1/governance/vote",
+      "tier": "protocol",
+      "billing": "on_chain",
+      "status": "live"
+    },
+    {
+      "id": "L14",
+      "slug": "stripe_fiat",
+      "title": "Stripe Fiat Funnel",
+      "model": "checkout to entitlements",
+      "stripe_slug": "all_paid",
+      "api_route": "POST /v1/integrations/stripe/webhook",
+      "tier": "all",
+      "status": "live"
+    }
+  ],
+  "free_tier": {
+    "slug": "node_free",
+    "system_id": "node_free",
+    "description": "Non-proprietary data, rate-limited lead-gen"
+  }
+}
